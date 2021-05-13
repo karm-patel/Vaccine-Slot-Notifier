@@ -1,0 +1,553 @@
+@media (min-width: 1170px) and (max-width: 1365px){
+.help-icon {
+  float: none;
+  margin: auto auto 20px;
+  text-align: center;
+}
+.help-text {
+  float: none;
+  text-align: center;
+  width: 100%;
+}
+.count-down .table-cell {
+  float: left;
+  margin: 0 29px;
+  text-align: center;
+}
+.countdown-text {
+  float: none;
+}
+.nivo-prevNav .left {
+  margin-left: 60px;
+}
+.nivo-nextNav .right {
+  margin-right: 60px;
+}
+.main-menu ul li {
+  padding: 47px 21px;
+}
+.stick .main-menu ul li {
+  padding: 18px 21px;
+}
+
+
+
+
+
+}
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+h1.title1 {
+  font-size: 35px;
+}
+.nivo-nextNav .right {
+  margin-right: 60px;
+}
+.nivo-prevNav .left {
+  margin-left: 60px;
+}
+.help-text {
+  text-align: center;
+  width: 100%;
+}
+.help-icon {
+  margin: auto auto 20px;
+  float: none;
+}
+.countdown-text {
+  width: 240px;
+}
+.count-down .table-cell {
+  margin: 0 28px;
+}
+.countdown-side-area {
+  margin-top: 17px;
+}
+.people-say-slide .owl-prev {
+  left: 0;
+}
+.people-say-slide .owl-next {
+  right: 0;
+}
+.couses-button .btn-md {
+  display: block;
+  margin: 10px auto auto;
+  width: 140px;
+}
+.main-menu ul li {
+  padding: 47px 20px;
+}
+.nivo-caption {
+  top: 28%;
+}
+.stick .main-menu ul li {
+  padding: 18px 20px;
+}
+
+.donate-list .box {
+	width: 115px;
+	margin-right: 10px;
+}
+.quick-donation-section .donate-list label .check-icon::before {
+	left: -30px;
+}
+.quick-donation-section input[type="radio"] + label .check-icon::after {
+	left: -29px;
+}
+
+
+
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+.main-menu ul li {
+  padding: 47px 17px;
+}
+
+h1.title1 {
+  font-size: 30px;
+}
+.nivo-caption {
+  top: 12%;
+}
+.donate-button {
+  margin-top: 15px;
+}
+.nivo-prevNav .left {
+  margin-left: 40px;
+}
+.nivo-nextNav .right {
+  margin-right: 40px;
+}
+.couses-button {
+  float: none;
+  text-align: center;
+  width: 100%;
+}
+.couses-price {
+  float: none;
+  text-align: center;
+  width: 100%;
+}
+.couses-price h5 {
+  float: none;
+  line-height: 60px;
+}
+.help-text {
+  float: right;
+  width: 100%;
+}
+.help-icon {
+  float: none;
+  margin: auto auto 25px;
+  width: 50px;
+}
+.help-text {
+  float: none;
+  text-align: center;
+  width: 100%;
+}
+.image-link {
+  top: 6px;
+}
+.countdown-text {
+  width: 230px;
+}
+.count-down .table-cell {
+  margin: 0 10px;
+}
+.count-down .tab-val {
+  height: 70px;
+  line-height: 60px;
+  width: 70px;
+}
+.countdown-side-area {
+  margin-top: 12px;
+}
+.volunteer-social > a i {
+  height: 25px;
+  line-height: 25px;
+  margin: 0 8px;
+  width: 25px;
+}
+.volunteer-social {
+  line-height: 219px;
+}
+.people-say-slide .owl-prev {
+  left: 0;
+}
+.people-say-slide .owl-next {
+  right: 0;
+}
+.newslater button {
+  width: 30px;
+}
+/* about css */
+.we-do-text > h5 {
+  font-size: 14px;
+}
+.comment > a {
+  padding: 0 4.5px;
+}
+.couses-button .btn-md {
+  display: block;
+  margin-top: 10px;
+}
+.main-menu {
+  display: none;
+}
+.mobile-menu-area{
+  display: block;
+}
+.stick {
+  position: inherit;
+} 
+
+.footer-widget.widget-two {
+  margin-top: 25px;
+}
+.footer-widget.widget-four {
+  margin-top: 25px;
+}
+
+.b-logo {
+	padding: 15px 10px;
+}
+
+.mt-sm-50{
+  margin-top: 50px;
+}
+.mt-sm-30{
+  margin-top: 30px;
+}
+.call-to-action ul li a {
+	padding: 0 8px;
+}
+.flicker-widget li {
+	width: 18.5%;
+}
+
+.donate-list .box {
+	width: 115px;
+	margin-right: 10px;
+}
+.quick-donation-section .donate-list label .check-icon::before {
+	left: -30px;
+}
+.quick-donation-section input[type="radio"] + label .check-icon::after {
+	left: -29px;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+.container {max-width:320px}
+
+.nivo-caption{
+  width: 100%;
+  top: 23%;
+  left: 10%;
+}
+h1.title1{
+  font-size: 18px;
+}
+.slider-button-area a{
+  margin-right: 5px;
+  font-size: 10px;
+  padding: 8px 7px;
+}
+.help-text{
+  float: none;
+  margin: 0 auto;
+}
+.img-responsive{
+  width: 100%;
+}
+.volunteer-image-and-social img{
+  width: 100%;
+}
+.single-people {
+	margin: auto;
+	width: 100%;
+}
+.mt-sm-50{
+  margin-top: 50px;
+}
+
+
+
+
+.call-to-action ul li {
+  float: none;
+  text-align: center;
+}
+.call-to-action ul li:last-child {
+  float: none;
+  position: relative;
+}
+.call-to-action ul li ul {
+  left: 39%;
+}
+.logo {
+  text-align: center;
+}
+.single-help {
+  margin-bottom: 30px;
+  overflow: hidden;
+  text-align: center;
+}
+.help-icon {
+  border: 1px solid #0aaac0;
+  float: none;
+  margin: auto auto 25px;
+  overflow: hidden;
+  text-align: center;
+  width: 50px;
+}
+.countdown-text {
+  float: none;
+  width: 300px;
+}
+.count-down .table-cell {
+  margin: 10px 19px;
+}
+.section-title h2 {
+  line-height: 36px;
+}
+.single-volunteer {
+  margin-bottom: 30px;
+}
+.single-blog {
+  margin-bottom: 30px;
+}
+.people-say-slide .owl-prev {
+  left: -10px;
+}
+.people-say-slide .owl-next {
+  right: -10px;
+}
+.nivo-prevNav .left {
+  margin-left: 20px;
+}
+.nivo-nextNav .right {
+  margin-right: 20px;
+}
+.nivo-directionNav a {
+  top: 35%;
+}
+.slider-area .nivo-controlNav {
+  left: 45%;
+}
+.countdown-text {
+  width: 270px;
+}
+.b-logo {
+  margin-bottom: 30px;
+}
+.copyright {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.footer-social {
+  float: none;
+  text-align: center;
+}
+.footer-widget.widget-two {
+  margin-top: 25px;
+}
+.top-social {
+  margin: auto;
+  overflow: hidden;
+  width: 240px;
+}
+.single-couses {
+  margin-bottom: 30px;
+}
+/* about page css */
+.about-content {
+  margin-bottom: 30px;
+}
+.single-we-do {
+  margin-bottom: 30px;
+}
+.single-project {
+  margin-bottom: 30px;
+}
+.about-skill-text {
+  margin-top: 30px;
+}
+.about-skill .bar {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.call-to-action {
+  float: none;
+}
+.blog {
+  overflow: hidden;
+}
+.blog-pagination {
+  float: left;
+  margin-top: 15px;
+}
+.single-box {
+  margin-bottom: 30px;
+}
+.couses-page-content .couses-button .btn-md {
+  display: block;
+  margin: 10px auto auto;
+  width: 140px;
+}
+.event-text > h3 {
+  margin-top: 15px;
+}
+.post-thum img {
+  width: inherit;
+}
+
+.mobile-menu-area{
+  display: block;
+}
+.slider-button-area a {
+  display: block;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+.youtube-area.height-100vh{
+  height: 500px;
+}
+.youtube-text {
+  padding: 80px 0;
+  width: 80%;
+}
+.form-fields {
+  width: 100%;
+}
+.form-fields > input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.flicker-widget li {
+  width: 29.5%;
+}
+.main-menu {
+  display: none;
+}
+.donate-button {
+  display: none;
+}
+.stick {
+  position: inherit;
+}
+    
+.mb-90 {
+	margin-bottom: 30px;
+}   
+
+.page-breadcumb-right .page-title {
+	float: none;
+}
+
+.donate-content {
+	padding: 15px;
+}
+.quick-donation-section .form {
+	flex-wrap: wrap;
+    flex-direction: column;
+	justify-content: center;
+}
+.donate-list .box {
+	width: 180px;
+	margin-right: 0;
+    margin-bottom: 15px;
+    float: none;
+}
+.quick-donation-section .enter-amount {
+	margin-right: 0;
+    margin-bottom: 15px;
+}
+.quick-donation-section .donate-btn button {
+	padding: 0 57px;
+}
+.enter-amount{
+  float: left;
+  width: 100%;
+}
+.donate-list .box {
+	width: 195px;
+}
+.quick-donation-section .enter-amount{
+  width: 100%;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+.couses-image > img {
+  width: 100%;
+}
+.help-text {
+  float: none;
+  width: 100%;
+}
+.gallery-area > div {
+  text-align: center;
+}
+.count-down .tab-val {
+  height: 66px;
+  line-height: 60px;
+  width: 66px;
+}
+.our-volunteers img {
+  width: 100%;
+}
+.volunteer-social {
+  line-height: 619px;
+}
+.blo-image-and-date > img {
+  width: 100%;
+}
+.footer-social {
+  margin-left: 0;
+}
+.footer-social {
+  float: none;
+}
+.progress-circular input {
+  left: 56% !important;
+}
+.we-do-text {
+  width: 90%;
+}
+
+
+
+
+}
+ 

@@ -1,0 +1,42 @@
+sudo apt-get update
+sudo apt install python3-pip
+pip3 install --upgrade pip
+sudo apt-get install nginx
+sudo apt-get install gunicorn3
+
+cd /etc/systemd/system/
+
+create below file
+gunicorn3.service :
+
+[Unit]
+Description=Gunicorn service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/flaskapp
+ExecStart=/usr/bin/gunicorn3 --workers 3 --bind unix:flaskapp.sock -m 007 app:app
+
+sudo systemctl daemon-reload
+sudo service gunicorn3 restart
+
+sudo service nginx restart
+sudo service gunicorn3 restart
+sudo service gunicorn3 status
+
+cd /etc/nginx/sites-enabled
+
+create flaskapp file:
+server {
+    listen 80;
+    server_name 0.0.0.0;
+
+    location / {
+	proxy_set_header Host $host;
+	proxy_pass http://unix:/home/ubuntu/flaskapp/flaskapp.sock;    }
+
+}
+sudo rm default
+

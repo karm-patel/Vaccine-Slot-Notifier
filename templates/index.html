@@ -1,0 +1,383 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<!-- head part-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>GetVaccinated</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon
+    ============================================ -->
+
+
+    <!-- master CSS
+    ============================================ -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'master.css') }}">
+
+    <!-- Color Css Files Start -->
+    <link rel="alternate stylesheet" type="text/css" href="{{url_for('static', filename = 'switcher/color-one.css') }}" title="color-one" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{url_for('static', filename = 'switcher/pattren1.css') }}" title="pattren1" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{url_for('static', filename = 'switcher/background1.css') }}" title="background1" media="screen" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+    <!-- Color Css Files End -->
+        <!-- Favicon
+    ============================================ -->
+
+
+    <!-- master CSS
+    ============================================ -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'master.css') }}">
+
+    <!-- Color Css Files Start -->
+    <link rel="alternate stylesheet" type="text/css" href="{{url_for('static', filename = 'switcher/color-one.css') }}"
+        title="color-one" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{url_for('static', filename = 'switcher/pattren1.css') }}"
+        title="pattren1" media="screen" />
+    <link rel="alternate stylesheet" type="text/css"
+        href="{{url_for('static', filename = 'switcher/background1.css') }}" title="background1" media="screen" />
+
+</head>
+
+<body>
+        <script src="{{url_for('static', filename = 'js/jquery.js') }}"></script>
+        <header>
+            <!-- End header top -->
+            <!-- Start main menu area -->
+            <div class="main-menu-area" id="sticker">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12">
+                            <div class="logo ptb-32">
+                                <a href= "{{ url_for('home') }}">
+                                    <h5 style="color:green;">VaccineSlot<br><span style="font-size: 25px; font-familty:'Courier New';">NOTIFIER</span></h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-xs-12">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#subscribe">Subscribe</a>
+                                        <li class="mega-menu"><a href="#unsubscribe">Unsubscribe</a>
+                                        </li>
+                                        <li class="mega-menu"><a href="#feedback">Feedback</a>
+                                        </li>
+                                        <li class="mega-menu"><a href="https://github.com/karm216/Vaccine-Slot-Notifier.git">Github</a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+              </header>
+        <section class="donate-page-area pt-90 pb-80" id="subscribe">
+         <!-- Start main area -->
+    <div class="main-area">
+        <!-- Start header -->
+
+
+
+
+            <div class="container">
+                     {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+            {% for category,message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 ml-auto mr-auto">
+                        <div class="donate-content">
+                            <div class="donate-form-container">
+                                <div class="donate-form-title">
+                                    <h3>Subscribe</h3>
+                                    <h5>You will get notified via gmail when vaccine slot is available in your area</h5>
+                                </div>
+                                <div class="donation-form quick-donation-section donate-page">
+                                    <form action="/" class="form" method="POST">
+
+                                        <div class="tg-donetship">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="single-input mb-30" style="width: 1000px">
+                                                        <label >Email</label>
+                                                        <input type="text" name="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="row">
+												<div class="col-lg-6">
+                                                    <div class="single-input mb-30">
+                                                        <label>Search By</label><br />
+                                                        <select name = "by" class="form-control" style="height: 55px; font-size: 14px;">
+															<option>Pincode</option>
+															<option>Area</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                    <div class="col-lg-6">
+                                                    <div class="single-input mb-30">
+                                                         <div class="single-input mb-30" style="width: 1000px">
+                                                        <label >Pincode</label>
+                                                        <input type="text" name="pin">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+												<div class="col-lg-6">
+                                                    <div class="single-input mb-30">
+                                                        <label>State</label><br />
+                                                        <select data-live-search="true" id="state" name = "state" class="form-control" style="height: 55px; font-size: 14px;">
+                                                            <option selected>select state</option>
+                                                            {% for state in states %}
+															<option>{{ state }}</option>
+
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-6">
+                                                    <div class="single-input mb-30">
+                                                        <label >District</label>
+                                                        <select data-live-search="true" id="district" name="district" class="form-control" style="height:55px; font-size: 14px;" >
+                                                        <option>select district</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                    </div>
+                                            <script>
+
+                                            $(document).ready(function () {
+                                            $("#state").selectpicker();
+
+                                            $("#district").selectpicker();
+
+                                            function load_data(type, state) {
+                                                $.ajax({
+                                                    url: "/district",
+                                                    method: "POST",
+                                                    data: { type: type, state: state },
+                                                    dataType: "json",
+                                                    success: function (data) { //alert(state)
+                                                        var html = "";
+                                                        for (var count = 0; count < data.length; count++) {
+                                                            html += '<option>' + data[count].district + "</option>";
+                                                        }
+                                                        if (type == "stateData") {
+                                                            $("#state").html(html);
+                                                            $("#state").selectpicker("refresh");
+                                                        } else {
+                                                            $("#district").html(html);
+                                                            $("#district").selectpicker("refresh");
+                                                        }
+                                                    },
+                                                });
+                                            }
+
+                                            $(document).on("change", "#state", function () {
+                                                var state = $("#state").val();
+                                                load_data("distData", state);
+                                            });
+
+                                        });
+                                          </script>
+
+												<div class="col-lg-12">
+                                                    <div class="single-input mb-30">
+                                                        <label>Age Group</label><br />
+                                                        <select name = "age" class="form-control" style="height: 55px; font-size: 14px;">
+                                                            <option>45+</option>
+															<option selected >18-44</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+
+                                        <div class="donate-btn text-center">
+                                            <button type="submit">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+        </section>
+         <section class="donate-page-area pt-90 pb-80" id="unsubscribe">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 ml-auto mr-auto">
+                        <div class="donate-content">
+                            <div class="donate-form-container">
+                                <div class="donate-form-title">
+                                    <h3>Unsubscribe</h3>
+                                    <h5>Unsubscribe after getting your slot details to avoid unnecessary mails</h5>
+                                </div>
+                                <div class="donation-form quick-donation-section donate-page">
+                                    <form action="/unsubscribe" class="form" method="POST">
+
+                                        <div class="tg-donetship">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="single-input mb-30" style="width: 1000px">
+                                                        <label >Email</label>
+                                                        <input type="text" name="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="donate-btn text-center">
+                                            <button type="submit">Unsubscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+         <section class="donate-page-area pt-90 pb-80" id="feedback">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 ml-auto mr-auto">
+                        <div class="donate-content">
+                            <div class="donate-form-container">
+                                <div class="donate-form-title">
+                                    <h3>Feedback</h3>
+                                    <h5>Any suggestions,bug report or feedback will be appreciated</h5>
+                                </div>
+                                <div class="donation-form quick-donation-section donate-page">
+                                    <form action="/feedback" class="form" method="POST">
+                                         <div class="tg-donetship">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="single-input mb-30" style="width: 1000px">
+                                                        <label >Your Name:</label>
+                                                        <input type="text" name="name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tg-donetship">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="single-input mb-30" style="width: 1000px">
+                                                        <label >Feedback</label>
+                                                        <input type="text" name="feedback">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="donate-btn text-center">
+                                            <button type="submit">Send</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               <div >
+            <h7 style="padding-left :13%;" >Active User count: {{ user_count[0] }} </h7><br>
+                   <h7 style="padding-left:13%;"> Total User Count: {{ user_count[1] }}</h7><br>
+                   <h7 style="padding-left :13%;">Created by:<a href="https://www.linkedin.com/in/karm-patel-865825196" style="color:blue;">@Karm Patel</a></h7>
+        </div>
+        </section>
+
+
+</form>
+
+<script src="{{url_for('static', filename = 'js/vendor/modernizr-3.10.0.min.js') }}"></script>
+
+    <!-- jquery-3.5.0.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/vendor/jquery-3.5.0.min.js') }}"></script>
+
+    <!-- jquery-migrate-3.1.0.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/vendor/jquery-migrate-3.1.0.min.js') }}"></script>
+
+    <!-- bootstrap js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- owl.carousel.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/owl.carousel.min.js') }}"></script>
+
+    <!-- jquery.nivo.slider.pack js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.nivo.slider.pack.js') }}"></script>
+
+    <!-- jquery.mixitup.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.mixitup.min.js') }}"></script>
+
+    <!-- jquery.magnific-popup.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.magnific-popup.min.js') }}"></script>
+
+    <!-- jquery.meanmenu js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.meanmenu.js') }}"></script>
+
+    <!-- jquery.syotimer.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.syotimer.min.js') }}"></script>
+
+    <!-- wow js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/wow.js') }}"></script>
+
+    <!-- jquery.scrollUp.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.scrollUp.min.js') }}"></script>
+
+    <!-- jquery.ajaxchimp.min js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/jquery.ajaxchimp.min.js') }}"></script>
+
+    <!-- plugins js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/plugins.js') }}"></script>
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- styleswitch js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/styleswitch.js') }}"></script>
+
+    <!-- main js
+    ============================================ -->
+    <script src="{{url_for('static', filename = 'js/main.js') }}"></script>
+</body>
+</html>

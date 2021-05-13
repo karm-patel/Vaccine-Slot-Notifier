@@ -1,0 +1,1 @@
+from slot.VaccineSlot import *

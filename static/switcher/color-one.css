@@ -1,0 +1,15 @@
+a:active, a:hover, .main-menu ul li:hover a, .drop-menu li a:hover, .drop-menu li a:hover, .section-title h2 span, .gallery-menu ul li:hover, .gallery-menu ul li.active, .blog-text > a:hover, .footer-widget.widget-two a:hover, .footer-widget.widget-two li:hover:after, .error-content h1 span, .breadcrumb a:hover, .breadcrumb li.active, .comment a:hover i, .admin > a:hover i, .back-home a i, .single0blog-coment ul li .comment-heading a.reply:hover, .copyright > p a:hover, .blog-pagination li:last-child a:hover, .single-box:hover i, .event-time-and-place span i, .nivo-nextNav .right:hover i, .nivo-prevNav .left:hover i, .blog-text h3 a:hover, .main-menu li:hover .drop-menu li a:hover, .main-menu li:hover .single-mega-item li a:hover, b.is-visible{
+  color: #0AAAA0;
+}
+.header-top, .donate-button > a, .ec-colorswitcher h3, .layout-btn a span, .btn-lg:hover, .btn-md:hover, .btn-sm:hover, .count-down .tab-val, .footer-widget-title > h3:after, .newslater button, .call-to-action ul li ul, .btn-lg-f, .single-project h2:after, .leave-reply .btn-style:hover, .popular-tags nav ul li a:hover, .event-sidt-title > h3:after, .blog-pagination li a:hover, .form-button button:hover, .event-image > h3, #scrollUp {
+  background-color: #0AAAA0;
+}
+.ec-colorswitcher h3, .donate-button > a, .main-menu ul li:hover a, .drop-menu li a:hover, .drop-menu li a:hover, .drop-menu, .mega-menu-area, .btn-lg:hover, .btn-md:hover, .help-icon, .btn-sm:hover, .people-say-image, .people-say-image > img, .blog-text > a:hover, .blog-pagination li a:hover, .single-box:hover, .form-button button:hover, .main-menu li:hover .drop-menu li a:hover, .main-menu li:hover .single-mega-item li a:hover, .main-menu li:hover .single-mega-item li:hover, .main-menu li:hover .drop-menu li:hover{
+  border-color: #0AAAA0;
+}
+.image-link, .volunteer-social, .we-do-text, .youtube-bg-overlay{
+  background: rgba(10, 170, 160, 0.68);
+}
+.slider-area .nivo-controlNav a.active, .slider-area .nivo-controlNav a:hover {
+  box-shadow: 0 0 0 3px #0AAAA0 inset;
+}

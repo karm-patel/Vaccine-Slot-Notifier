@@ -1,0 +1,168 @@
+﻿Dependent Dropdown with Search Box using Python Flask jQuery, Ajax, and MySQLdb Database
+
+bootstrap-select plugin https://developer.snapappointments.com/bootstrap-select/
+
+--
+-- Table structure for table `carbrands`
+--
+
+CREATE TABLE `carbrands` (
+  `brand_id` int(11) NOT NULL,
+  `brand_name` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `carbrands`
+--
+
+INSERT INTO `carbrands` (`brand_id`, `brand_name`) VALUES
+(1, 'Toyota'),
+(2, 'Honda'),
+(3, 'Suzuki'),
+(4, 'Mitsubishi'),
+(5, 'Hyundai');
+
+--
+-- Table structure for table `carmodels`
+--
+
+CREATE TABLE `carmodels` (
+  `model_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `car_models` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `carmodels`
+--
+
+INSERT INTO `carmodels` (`model_id`, `brand_id`, `car_models`) VALUES
+(1, 1, 'Toyota Corolla'),
+(2, 2, 'Toyota Camry'),
+(3, 1, 'Toyota Yaris'),
+(4, 1, 'Toyota Sienna'),
+(5, 1, 'Toyota RAV4'),
+(6, 1, 'Toyota Highlander'),
+(7, 2, 'Honda HR-V'),
+(8, 2, 'Honda Odyssey'),
+(9, 3, 'Swift'),
+(10, 3, 'Celerio'),
+(11, 3, 'Ertiga'),
+(12, 3, 'Vitara'),
+(13, 4, 'Mirage'),
+(14, 4, 'Mirage G4'),
+(15, 4, 'Xpander Cross'),
+(16, 4, 'Montero Sport'),
+(17, 4, 'Strada Athlete'),
+(18, 5, 'Reina '),
+(19, 5, 'Accent'),
+(20, 5, 'Elantra'),
+(21, 5, 'Tucson');
+app.py
+#app.py
+from flask import Flask, render_template, jsonify, request
+from flask_mysqldb import MySQL,MySQLdb #pip install flask-mysqldb https://github.com/alexferl/flask-mysqldb
+
+app = Flask(__name__)
+     
+app.secret_key = "caircocoders-ednalan"
+     
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'testingdb'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+mysql = MySQL(app)
+  
+@app.route('/')
+def main():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    result = cur.execute("SELECT * FROM carbrands ORDER BY brand_id")
+    carbrands = cur.fetchall()
+    return render_template('index.html', carbrands=carbrands)
+
+@app.route("/carbrand",methods=["POST","GET"])
+def carbrand():  
+    cursor = mysql.connection.cursor()
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    if request.method == 'POST':
+        category_id = request.form['category_id'] 
+        print(category_id)	
+        result = cur.execute("SELECT * FROM carmodels WHERE brand_id = %s ORDER BY car_models ASC", [category_id] )
+        carmodel = cur.fetchall()  
+        OutputArray = []
+        for row in carmodel:
+            outputObj = {
+                'id': row['brand_id'],
+                'name': row['car_models']}
+            OutputArray.append(outputObj)
+    return jsonify(OutputArray)
+	
+if __name__ == '__main__':
+    app.run(debug=True)
+templates/index.html
+//templates/index.html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dependent Dropdown with Search Box using Python Flask jQuery, Ajax, and MySQLdb Database</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 align="center">Dependent Dropdown with Search Box using Python Flask jQuery, Ajax, and MySQLdb Database</h1>       
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Select Car</label>
+                    <select name="car_brand" data-live-search="true" id="car_brand" class="form-control" title="Select Car Brand"> 
+					{% for row in carbrands %}
+					<option value="{{row.brand_id}}">{{row.brand_name}}</option>
+					{% endfor %}
+					</select>
+                </div>
+                <div class="col-md-6">
+                    <label>Select Brand</label>
+                    <select name="car_models" data-live-search="true" id="car_models" class="form-control" title="Select Car Model"> </select>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#car_brand").selectpicker();
+  
+                $("#car_models").selectpicker();
+  
+                function load_data(type, category_id) {
+                    $.ajax({
+                        url: "/carbrand",
+                        method: "POST",
+                        data: { type: type, category_id: category_id },
+                        dataType: "json",
+                        success: function (data) { //alert(category_id)
+                            var html = "";
+                            for (var count = 0; count < data.length; count++) {
+                                html += '<option value="' + data[count].id + '">' + data[count].name + "</option>";
+                            }
+                            if (type == "carData") {
+                                $("#car_brand").html(html);
+                                $("#car_brand").selectpicker("refresh");
+                            } else {
+                                $("#car_models").html(html);
+                                $("#car_models").selectpicker("refresh");
+                            }
+                        },
+                    });
+                }
+  
+                $(document).on("change", "#car_brand", function () {
+                    var category_id = $("#car_brand").val();
+                    load_data("carModeldata", category_id);
+                });
+            });
+        </script>
+    </body>
+</html>
